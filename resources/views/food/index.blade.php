@@ -46,7 +46,7 @@
                                 {{$foods->menu->menu_name}}
                               </div>
                             </td>
-                            <td>{{$foods->created_at}}</td>
+                            <td>{{$foods->created_at->diffforHumans()}}</td>
                             <td>
                                 <a href="{{ URL::to('food/' . $foods->id . '/edit') }}" class="btn btn-primary p-2" title="edit"><img src="{{asset('images/edit.png')}}"></a>
                                 <a href="{{ URL::to('food/' . $foods->id) }}" class="btn btn-warning p-2" title="View"><img src="{{asset('images/view.png')}}"></a>

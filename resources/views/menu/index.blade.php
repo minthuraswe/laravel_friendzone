@@ -27,7 +27,9 @@
                         <tr>
                             <th scope="row">{{$item->id}}</th>
                             <td>{{$item->menu_name}}</td>
-                            <td>{{$item->updated_at}}</td>
+                            <td>
+                             {{$item->created_at->diffforHumans()}}
+                            </td>
                             <td>
                                 <a href="{{ URL::to('menu/' . $item->id . '/edit') }}" class="btn btn-primary p-2" title="edit"><img src="{{asset('images/edit.png')}}"></a>
                                 <form action="{{ URL::to('menu/' . $item->id ) }}" method="post" style="display: inline;">
