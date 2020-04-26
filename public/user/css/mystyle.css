@@ -120,6 +120,7 @@ button:focus {
     background-color: #191919!important;
     padding: 1.4rem 0.75rem!important;
     color: gray!important;
+    font-size: 1.15rem!important;
 }
 .btn-warning:focus{
     box-shadow:0 0 0 0.2rem rgba(164, 124, 72, 0.5)!important;

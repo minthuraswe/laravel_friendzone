@@ -54,7 +54,7 @@ class ContactusController extends Controller
         $usermessage->usermessage = $request->message;
         $usermessage->save();
 
-        return redirect('/contact')->with('status','Thanks for your feedback.');
+        return redirect('/contact')->with('status','Thanks for your contact.');
     }
 
     /**

@@ -22,9 +22,9 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
-<body  style="background-image:url('images/register-bg.jpg');background-size:cover;">
+<body style="padding-top:70px;padding-bottom:70px;" class="bg-light">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/dashboard') }}">
                     {{ config('app.name', 'FriendZone') }}
@@ -39,7 +39,7 @@
 
                     </ul>
 
-                    {{-- <!-- Right Side Of Navbar -->
+                    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
@@ -70,10 +70,10 @@
                                 </div>
                             </li>
                         @endguest
-                    </ul> --}}
+                    </ul>
                 </div>
             </div>
-        </nav>
+        </nav> --}}
 
         <main class="py-4">
             @yield('content')
