@@ -7,15 +7,6 @@
             <div class="card">
                 <div class="card-header mb-2">Editing Food Form</div>
                     <div class="card-body">
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li  style="list-style-type:square;">{{$error}}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
                         <form action="{{url('food/' . $food->id )}}" method="post" enctype="multipart/form-data">
                             @method('PUT')
                             @csrf
@@ -29,9 +20,15 @@
                                 <label for="image" class="col-md-4 col-form-label text-md-right">Enter Food Image</label>
                                 <div class="col-md-6">
                                 <input type="file" name="foodimage"  class="border form-control" value="{{$food->foodimage}}">
+                                @if ($errors->has('foodimage'))
+                                    <span class="text-danger">
+                                        <sm>{{ $errors->first('foodimage') }}</sm>
+                                    </span><br>
+                                @endif
                                 <img src="{{asset('/uploads/'. $food->foodimage)}}" class="mt-2 img-thumbnail" width="100" />
                                 {{-- <input type="hidden" name="foodimage" value="{{ $food->foodimage }}" /> --}}
-                                </div>
+                              
+                            </div>
                             </div>
                             <div class="form-group row">
                                 <label for="email" class="col-md-4 col-form-label text-md-right">Enter Food Ingredient</label>

@@ -7,15 +7,6 @@
             <div class="card">
                 <div class="card-header mb-2">Uploading Food Form</div>
                     <div class="card-body">
-                        {{-- @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li  style="list-style-type:square;">{{$error}}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif --}}
                         <form action="{{url('/food')}}" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
                             @csrf
                            
