@@ -36,7 +36,7 @@
                         <span class="line"></span>
                         <span class="line"></span>
                         <span class="line"></span>
-                    </div>
+                    </div> 
                 </div>
                 <div class="float-right">
                     <ul>
@@ -44,6 +44,11 @@
                             <div class="drop-down dropdown-profile">
                                 <div class="dropdown-content-body">
                                     <ul>
+                                        <li><a href="/edit"><img src="{{asset('user/images/edit.png')}}" class="mr-2"><span>Edit Profile</span></a></li>
+                                        <li><a href="/change_user_pass"><img src="{{asset('user/images/edit.png')}}" class="mr-2"><span>Change Password</span></a></li>
+                                       
+                                        <li><a href="{{route('register')}}"><i class="ti-user"></i> <span>Register</span></a></li>
+      
                                         <li>
                                             <a href="{{ route('logout') }}" 
                                                 onclick="event.preventDefault();
@@ -54,7 +59,7 @@
                                              @csrf
                                             </form>
                                         </li>
-                                        <li><a href="{{route('register')}}"><i class="ti-user"></i> <span>Register</span></a></li>
+                                     
                                         {{-- <li><a href="#"><i class="ti-email"></i> <span>Inbox</span></a></li>
                                         <li><a href="#"><i class="ti-settings"></i> <span>Setting</span></a></li> --}}
                                     </ul>

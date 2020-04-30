@@ -19,8 +19,10 @@
 Auth::routes();
 Route::get('/dashboard', 'HomeController@index');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
-
+Route::resource('/users', 'UserController');
+Route::get('/edit', '\App\Http\Controllers\Auth\RegisterController@edit');
+Route::get('/change_user_pass','\App\Http\Controllers\Auth\RegisterController@page' );
+Route::resource('/changepassword', 'ChangePassController');
 
 
 Route::group(['namespace' => 'Backend'], function(){

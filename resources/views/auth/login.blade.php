@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-4">
+            {{-- <a href="/register">Register</a> --}}
            <h2 class="text-center">Admin Panel</h2>
             <div class="card bg-info text-light">
                 <div class="card-header text-center" style="font-size:20px;">{{ __('Friend Zone') }}
@@ -70,7 +71,7 @@
                     </form>
                 </div>
             </div>
-            <p class="pt-2 mb-0"><i class="fa fa-copyright" aria-hidden="true"></i> 2020.Friend Zone. All Rights Reserved.</p>
+            <p class="pt-2 mb-0"><i class="fa fa-copyright" aria-hidden="true"></i> 2020 Friend Zone. All Rights Reserved.</p>
             <a href="/index" class="text-monospace"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to Home</a>
         </div>
     </div>

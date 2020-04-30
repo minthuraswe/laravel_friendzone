@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
           <div class="col-md-6 p-0 header-bg">
-            <ul class="list-unstyled p-5">
+            <ul class="list-unstyled p-5 mb-0">
               <li class="">
                 <h2 class="fz welcome-fz">Open Daily</h2>
                 <p class="cf-rs pb-3">From 08:30AM to 08:30PM</p>
@@ -21,7 +21,7 @@
             </ul>
           </div>
             <div class="col-md-6 p-0">
-              <img src="{{asset('user/images/media.jpg')}}" class="img-fluid my-height w-100" >
+              <img src="{{asset('user/images/media.jpg')}}" class="img-fluid my-height w-100">
             </div>
         </div>
     </div>

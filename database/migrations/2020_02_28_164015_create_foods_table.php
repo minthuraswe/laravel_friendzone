@@ -15,6 +15,7 @@ class CreateFoodsTable extends Migration
     {
         Schema::create('foods', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
             $table->string('foodname');
             $table->string('foodimage');
             $table->string('foodingredient');
@@ -23,6 +24,7 @@ class CreateFoodsTable extends Migration
             $table->timestamps();
 
             $table->foreign('menu_id')->references('id')->on('menus');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

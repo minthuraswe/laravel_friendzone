@@ -49,16 +49,18 @@ class FoodController extends Controller
        ])->validate();
 
         $file = $request->file('foodimage');
-        $filename = uniqid().'_'.$file->getClientOriginalName();
+        $filename = uniqid().'.'.$file->getClientOriginalExtension();
         $file->move(public_path(). '/uploads/', $filename);
-        
-        $food = new Food;
-        $food->foodname = $request->foodname;
-        $food->foodimage = $filename;
-        $food->foodingredient = $request->foodingredient;
-        $food->foodprice = $request->foodprice;
-        $food->menu_id = $request->menuname;
-        $food->save();
+
+        Food::create([
+            'user_id' => auth()->id(),
+            'foodname' => request('foodname'),
+            'foodimage' => $filename,
+            'foodingredient' => request('foodingredient'),
+            'foodprice' => request('foodprice'),
+            'menu_id' => request('menuname'),
+        ]);
+
         return redirect('/food')->with('message','Successfully Uploaded!!');
     }
 
@@ -114,7 +116,7 @@ class FoodController extends Controller
         ])->validate();
 
         $file = $request->file('foodimage');
-        $filename = uniqid().'_'.$file->getClientOriginalName();
+        $filename = uniqid().'.'.$file->getClientOriginalExtension();
         $file->move(public_path(). '/uploads/', $filename);
 
         $food = Food::find($id);

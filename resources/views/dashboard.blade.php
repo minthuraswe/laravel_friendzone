@@ -1,10 +1,25 @@
 @extends('layouts.master')
 @section('content')
-
             <!-- /# row -->
             <section id="main-content">
+               
+                   
+               
                 <div class="row">
-             
+                    @if (session('success'))
+                    <div class="col-lg-12 title-margin-right  ">
+                        <ol class="breadcrumb mb-0 alert alert-success">
+                            <span>{{session('success')}}</span>
+                        </ol>
+                    </div>
+                    @endif
+                    {{-- @if (session('message'))
+                    <div class="col-lg-12 title-margin-right  ">
+                        <ol class="breadcrumb mb-0 alert alert-success">
+                            <span>{{session('message')}}</span>
+                        </ol>
+                    </div>
+                    @endif --}}
                     <div class="col-lg-4">
                         <a href="{{url('/food')}}"><div class="card mt-0">
                             
@@ -86,7 +101,11 @@
                         <div class="card-body">
                             <img src="{{asset('/uploads/' . $food->foodimage)}}" class="w-100 mt-2 mb-2" style="max-height:200px;">
                                 <p class="card-text">{{$food->foodimage}}</p>
-                            <div>Uploaded by {{Auth::user()->name}} <span class="pull-right">{{$food->created_at->diffForHumans()}}</span></div>
+                            <div>Uploaded by
+                                <?php $user = App\User::find($food->user_id) ?>
+                                {{$user->name}}
+                        
+                            <span class="pull-right">{{$food->created_at->diffForHumans()}}</span></div>
                         </div>
                     </div>
                     </div>  
