@@ -45,7 +45,7 @@
                                 <div class="dropdown-content-body">
                                     <ul>
                                         <li><a href="/edit"><img src="{{asset('user/images/edit.png')}}" class="mr-2"><span>Edit Profile</span></a></li>
-                                        <li><a href="/change_user_pass"><img src="{{asset('user/images/edit.png')}}" class="mr-2"><span>Change Password</span></a></li>
+                                        {{-- <li><a href="/change_user_pass"><img src="{{asset('user/images/edit.png')}}" class="mr-2"><span>Change Password</span></a></li> --}}
                                        
                                         <li><a href="{{route('register')}}"><i class="ti-user"></i> <span>Register</span></a></li>
       

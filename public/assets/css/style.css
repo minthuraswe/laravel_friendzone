@@ -4240,6 +4240,10 @@ h6.h1 {
 .bg-primary-dark {
   background: #0095e1;
 }
+.card{
+  box-shadow: none!important;
+  border:0!important;
+}
 .widget-card-circle i {
   font-size: 30px;
   left: 0;

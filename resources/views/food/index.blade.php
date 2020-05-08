@@ -10,7 +10,7 @@
             <a href="{{url('/food/create')}}" class="btn btn-primary mb-3  p-2" >Upload New One Here</a>
             <a href="{{url('/dashboard')}}" class="btn btn-primary mb-3 p-2">Click Here To Go Back</a>
             <form action="{{url('/searchfood')}}" method="get" class="form-inline my-2 my-lg-0 pull-right">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search">
+                <input class="form-control rounded mr-sm-2" type="search" placeholder="Search" name="search" style="height:37px;">
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
               </form>
               @if (session('message'))

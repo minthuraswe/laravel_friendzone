@@ -63,16 +63,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $pass = $data['password'];
-        $mdpass = md5($pass);
-        $shpass = sha1($mdpass);
-        $crypass = crypt($mdpass, $shpass);
+        // $pass = $data['password'];
+        // $mdpass = md5($pass);
+        // $shpass = sha1($mdpass);
+        // $crypass = crypt($mdpass, $shpass);
 
 
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => $crypass,
+            'password' => Hash::make($data['password']),
         ]);
     }
 
@@ -80,7 +80,7 @@ class RegisterController extends Controller
         return view('auth.edit');
     }
 
-    public function page(){
-        return view('auth.changepass');
-    }
+    // public function page(){
+    //     return view('auth.changepass');
+    // }
 }

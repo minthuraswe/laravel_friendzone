@@ -63,8 +63,8 @@
                                 <div class="stat-content">
                                     <div class="stat-text">Customer Feedback</div>
                                     <div class="stat-digit pt-3 pb-3">
-                                        <button type="button" class="btn btn-danger">
-                                        Received Mails <span class="badge badge-warning text-light">{{$countFormessage}}</span>
+                                        <button type="button" class="btn btn-warning">
+                                        items <span class="badge badge-light text-primary">{{$countFormessage}}</span>
                                         </button>
                                     </div>                                        
                                 </div>
