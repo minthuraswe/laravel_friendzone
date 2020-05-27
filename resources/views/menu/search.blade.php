@@ -3,7 +3,20 @@
 <section id="main-content">
     <div class="row">
         <div class="col-md-12">
-            <a href="{{url('/menu')}}" class="btn btn-primary mb-3  p-2" >Click Here To Go Back</a>
+            <div class="d-flex">
+                <h2>Foods</h2>
+                <form action="{{url('/searchmenu')}}" method="get" class="form-inline my-2 my-lg-0">
+                    <input class="mr-sm-2 ml-sm-2 mb-3" type="search" placeholder="Search" name="search">
+                    <button class=" mb-3" type="submit">Search</button>
+                </form>
+                <div class="ml-auto">
+                    <a href="{{url('/menu')}}" class="btn btn-primary mb-3  p-2" >Click Here To Go Back</a>
+                </div>
+            </div>
+
+            <div>    
+                <b> {{$search_count}} </b> result for "{{$search}}"
+            </div>
             
             <table class="table table-striped">
                 <thead>
@@ -16,11 +29,11 @@
                 </thead>
 
                 <tbody>
-                    @foreach ($data as $item)
+                    @foreach ($searchmenu as $item)
                         <tr>
                             <th scope="row">{{$item->id}}</th>
                             <td>{{$item->menu_name}}</td>
-                            <td>{{$item->updated_at}}</td>
+                            <td>{{$item->created_at->diffforHumans()}}</td>
                             <td>
                                 <a href="{{ URL::to('menu/' . $item->id . '/edit') }}" class="btn btn-primary p-2" title="edit"><img src="{{asset('images/edit.png')}}"></a>
                                 <form action="{{ URL::to('menu/' . $item->id ) }}" method="post" style="display: inline;">

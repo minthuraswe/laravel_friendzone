@@ -1,11 +1,11 @@
-@extends('frontend.master')
+@extends('frontend.layouts.master')
 <?php $current_page = "index"; ?>
-@include('frontend.header')
 @section('title','FriendZone | Home')
-@include('frontend.slider')
-@include('frontend.welcome')
 
 @section('content')
+@include('frontend.header')
+@include('frontend.slider')
+@include('frontend.welcome')
 
 <section>
     <div class="container-fluid">
@@ -24,6 +24,7 @@
         </div> 
      </div>
 </section>
+
 @include('frontend.media')
 @include('frontend.menulist')
 @include('frontend.footer')

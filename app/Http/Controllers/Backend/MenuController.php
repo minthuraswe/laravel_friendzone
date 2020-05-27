@@ -51,8 +51,10 @@ class MenuController extends Controller
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $data = DB::table('menus')->where('menu_name', 'like', '%'.$search.'%')->paginate(5);
-        return view('menu.search',compact('data'));
+        $searchmenu = Menu::where('menu_name', 'like', '%'.$search.'%')->paginate(5);
+        $search_count = count($searchmenu);
+
+        return view('menu.search',compact('searchmenu','search','search_count'));
     }
 
     /**

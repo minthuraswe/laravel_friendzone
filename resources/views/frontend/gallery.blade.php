@@ -1,9 +1,10 @@
-@extends('frontend.master')
+@extends('frontend.layouts.master')
 <?php $current_page = "gallery"; ?>
-@include('frontend.header')
 @section('title', 'FriendZone | Gallery')
+
 @section('content')
-{{-- @include('frontend.secheader_gallery') --}}
+@include('frontend.header')
+
      <section style="background-color:#131313;">
         <div class="container pt-5 pb-5">           
             <div class="row">
@@ -13,7 +14,7 @@
                 
                 @foreach ($food as $foods)
                 <div class="col-md-3">
-                    <div class="card  mb-4 " style="height:184px;border:none;">
+                    <div class="card  mb-4 " style="border:none;">
                         <div class="img-hover-zoom ">
                     <img src="{{asset('/uploads/' . $foods->foodimage)}}" class="img-fluid w-100 " style="max-height:184px;border:1px solid #787878;">
                 </div></div>

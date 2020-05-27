@@ -11,10 +11,7 @@ use App\Model\Food;
 class FoodByMenuController extends Controller
 {
     public function index($id){
-        $food = Menu::find($id)
-                ->foods()
-                ->paginate(6);
-        // $data = Menu::all();
+        $food = Menu::find($id)->foods()->paginate(5);
         return view('food.foodbymenu',compact('food'));
     }
 

@@ -2,24 +2,28 @@
 <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
     <div class="nano">
         <div class="nano-content">
-            <div class="logo"><a href="{{url('/dashboard')}}"><!-- <img src="assets/images/logo.png" alt="" /> --><span>FriendZone</span></a></div>
+            <div class="logo"><a href="{{url('/admin')}}"><!-- <img src="assets/images/logo.png" alt="" /> --><span>FriendZone</span></a></div>
             <ul>
                 <li class="label">Main</li>
-                    <li class="active">
-                        <a href="{{url('/dashboard')}}" >
+                    <li  class="{{(request()->is('admin')) ? 'active' : ''}}">
+                        <a href="{{url('/admin')}}" >
                             <i class="ti-home"></i> Dashboard</a>
                 </li>
 
                 <li class="label">Foods</li>
-                <li><a href="{{url('/food')}}"><i class="ti-bar-chart-alt"></i>  Food Table</a></li>
+                <li class="{{(request()->is('food*')) ? 'active' : ''}}"><a href="{{url('/food')}}"><i class="ti-bar-chart-alt"></i>  Food Table</a></li>
                 
                
                 <li class="label">Menu</li>
-                <li><a href="{{url('/menu')}}"><i class="ti-panel"></i> Menu Table </a></li>
+                <li  class="{{(request()->is('menu*')) ? 'active' : ''}}"><a href="{{url('/menu')}}"><i class="ti-panel"></i> Menu Table </a></li>
                
                
                 <li class="label">Form</li>
-                <li><a href="{{url('/feedbackus')}}"><i class="ti-view-list-alt"></i> User Feedback </a></li>
+                <li  class="{{(request()->is('feedback*')) ? 'active' : ''}}"><a href="{{url('/feedback')}}"><i class="ti-view-list-alt"></i> User Feedback </a></li>
+                
+                <li style="margin-top:11.8rem;" class="border-top">
+                    <p class="p-4">{{date('Y')}} © FriendZone</p>
+                </li>
             </ul>
         </div>
     </div>
@@ -32,11 +36,12 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="float-left">
-                    <div class="hamburger sidebar-toggle">
+                    <a href="/admin"><h5 class="pt-3">Dashboard</h5></a>
+                    {{-- <div class="hamburger sidebar-toggle">
                         <span class="line"></span>
                         <span class="line"></span>
                         <span class="line"></span>
-                    </div> 
+                    </div>  --}}
                 </div>
                 <div class="float-right">
                     <ul>
@@ -81,7 +86,7 @@
                 <div class="col-lg-12 title-margin-right  ">
                     <ol class="breadcrumb mb-0">
                        <div class="float-left"> <li>    <?php echo date("F j, Y") ?> </li></div>
-                        <div class="float-right "><li class="breadcrumb-item"><a href="{{url('/dashboard')}}">Dashboard</a></li>
+                        <div class="float-right "><li class="breadcrumb-item">Dashboard</li>
                         <?php $segments = ''; ?>
                         @foreach(Request::segments() as $segment)
                             <?php $segments .= '/'.$segment; ?>

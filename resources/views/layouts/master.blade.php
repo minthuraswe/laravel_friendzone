@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>FriendZone</title>
+    <link rel="shortcut icon" type="image/png"  href="{{asset('images/logo.png')}}">
 
     <!-- Styles -->
     <link href="{{asset('assets/css/lib/weather-icons.css')}}" rel="stylesheet" />
@@ -26,7 +27,6 @@
     
     @include('sidebar')
     @yield('content')
-    @include('footer')
     <!-- jquery vendor -->
     <script src="{{asset('assets/js/lib/jquery.min.js')}}"></script>
     <script src="{{asset('assets/js/lib/jquery.nanoscroller.min.js')}}"></script>

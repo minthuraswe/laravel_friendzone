@@ -3,12 +3,18 @@
 <section id="main-content">
     <div class="row">
         <div class="col-md-12">
-            <a href="{{url('/menu/create')}}" class="btn btn-primary mb-3  p-2" >Create New One Here</a>
-            <a href="{{url('/dashboard')}}" class="btn btn-primary mb-3 p-2">Click Here To Go Back</a>
-            <form action="{{url('/searchmenu')}}" method="get" class="form-inline my-2 my-lg-0 pull-right">
-                <input class="form-control rounded mr-sm-2" type="search" placeholder="Search" name="search" style="height:37px;">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-              </form>
+          <div class="d-flex">
+            <h2>Menus</h2>
+            <form action="{{url('/searchmenu')}}" method="get" class="form-inline my-2 my-lg-0">
+              <input class="mr-sm-2 ml-sm-2 mb-3" type="search" placeholder="Search" name="search">
+              <button class=" mb-3" type="submit">Search</button>
+            </form>
+            <div class="ml-auto">
+              <a href="{{url('/menu/create')}}" class="btn btn-primary mb-3  p-2" >Create New One Here</a>
+              <a href="{{url('/dashboard')}}" class="btn btn-outline-primary mb-3 p-2">Click Here To Go Back</a>
+            </div>
+          </div>
+          
               @if (session('message'))
               <p class="alert alert-success">{{session('message')}}</p>
               @endif
@@ -17,7 +23,7 @@
                   <tr>
                     <th>#</th>
                     <th>Name</th>
-                    <th>Time</th>
+                    <th>Date/Time</th>
                     <th class="text-right">Action</th>
                   </tr>
                 </thead>
@@ -28,7 +34,7 @@
                             <th scope="row">{{$item->id}}</th>
                             <td>{{$item->menu_name}}</td>
                             <td>
-                             {{$item->created_at->diffforHumans()}}
+                             {{$item->updated_at->diffforHumans()}}
                             </td>
                             <td>
                                 <a href="{{ URL::to('menu/' . $item->id . '/edit') }}" class="btn btn-primary p-2" title="edit"><img src="{{asset('images/edit.png')}}"></a>
@@ -42,7 +48,7 @@
                     @endforeach
                </tbody>
               </table>
-              <div class="mt-4  mr-0 row float-right">
+              <div class="mt-4  mr-0 row ml-0">
                 {{$data->links()}}
               </div>
               

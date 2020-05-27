@@ -17,7 +17,7 @@
 // });
 
 Auth::routes();
-Route::get('/dashboard', 'HomeController@index');
+Route::get('/admin', 'HomeController@index');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::resource('/users', 'UserController');
@@ -40,7 +40,7 @@ Route::group(['namespace' => 'Backend'], function(){
 Route::group(['namespace' => 'Frontend'], function(){
     Route::get('/index','HomeController@index');
     Route::get('/gallery','GalleryController@index');
-    Route::resource('/feedbackus','ContactusController');
+    Route::resource('/feedback','ContactusController');
     Route::get('/contact','ContactusController@home');
     Route::get('/menus','MenuController@index');
     Route::get('/food-by/menu-{id}', 'MenuController@find');

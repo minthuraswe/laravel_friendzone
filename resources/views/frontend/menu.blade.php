@@ -1,9 +1,10 @@
-@extends('frontend.master')
+@extends('frontend.layouts.master')
 <?php  $current_page = 'menu'; ?>
-@include('frontend.header')
 @section('title', 'FriendZone | Menu')
+
 @section('content')
-{{-- @include('frontend.secheader_menu') --}}
+@include('frontend.header')
+
 
 <section style="background-color:#131313;">
     <div class="container pt-5 pb-5">
@@ -15,14 +16,16 @@
                   <div class="col-md-3 d-none d-sm-block">
                     <h5>
                     <ul class="list-unstyled">
-                        <a href="{{url('/menus')}}" class="text-light">
-                          <li class="pt-2 pb-2  mb-3" style="background-color:#000;border:1px solid #787878;"> 
+                        <a href="{{url('/menus')}}">
+                          <li class="pt-2 pb-2  mb-3
+                          {{ (request()->is('menus')) ? 'mine' : ''}}" style="border:1px solid #787878;"> 
                             All
                           </li> 
                         </a>
                           @foreach ($data as $item)
                             <a href="{{URL::to('food-by/menu-' . $item->id)}}" >
-                              <li class="pt-2 pb-2  mb-3" style="background-color:#000;border:1px solid #787878;">
+                              <li class="pt-2 pb-2  mb-3
+                              {{ (request()->is('food-by/menu-' . $item->id)) ? 'mine' : ''}}" style="border:1px solid #787878;">
                                 {{$item->menu_name}}
                               </li>
                             </a>
@@ -48,15 +51,17 @@
                           </div>
                       </div>
                       @endforeach
+                      <div class="d-sm-block d-md-none mx-auto">{{$food->links()}}</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
         </div>
         
 </section>
 
-{{-- @include('frontend.clientfeedback') --}}
+
 @include('frontend.footer')
 @endsection

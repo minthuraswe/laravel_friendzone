@@ -29,7 +29,7 @@
                             <td>{{$mail->usermessage}}</td>
                             <td>{{$mail->created_at->diffForHumans()}}</td>
                             <td>
-                                <form action="{{URL::to('feedbackus/' . $mail->id)}}" method="post">
+                                <form action="{{URL::to('feedback/' . $mail->id)}}" method="post">
                                     @method('DELETE')
                                     @csrf
                                     <button type="submit" class="btn btn-danger p-2" title="delete"><img src="{{asset('images/delete.png')}}"></button>

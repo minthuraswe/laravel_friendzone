@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name') }}</title>
+    <title>Friend Zone</title>
 
    
     <!-- Fonts -->
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
-<body style="padding-top:70px;padding-bottom:70px;" class="bg-light">
+<body style="padding-top:70px;padding-bottom:70px;background-color: #000000;">
     <div id="app">
         {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">

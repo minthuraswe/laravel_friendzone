@@ -54,7 +54,7 @@ class ContactusController extends Controller
         $usermessage->usermessage = $request->message;
         $usermessage->save();
 
-        return redirect('/contact')->with('status','Thanks for your contact.');
+        return redirect('contact')->with('status','Thanks for your contact.');
     }
 
     /**
@@ -102,6 +102,6 @@ class ContactusController extends Controller
         $usermessage = UserMessage::find($id);
         $usermessage->destroy($id);
 
-        return redirect('/feedbackus')->with('status','Successfully Deleted!!');
+        return redirect('feedback')->with('status','Successfully Deleted!!');
     }
 }

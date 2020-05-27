@@ -3,13 +3,13 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-4">
+        <div class="col-md-4" >
             {{-- <a href="/register">Register</a> --}}
-           <h2 class="text-center">Admin Panel</h2>
-            <div class="card bg-info text-light">
-                <div class="card-header text-center" style="font-size:20px;">{{ __('Friend Zone') }}
+           <h2 class="text-center" style="color: #e6e3e3;">Friend Zone</h2>
+            <div class="card text-light" style="background-color: #191919;">
+                {{-- <div class="card-header text-center" style="font-size:20px;">{{ __('Friend Zone') }}
                 <span class="d-flex justify-content-center" style="font-size:11px;">Cafe & Restaurant</span>
-                </div>
+                </div> --}}
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -57,7 +57,7 @@
 
                         <div class="form-group row ml-0">
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-info border px-4 mt-2">
+                                <button type="submit" class="btn btn-light border px-4 mt-2">
                                     {{ __('Login') }}
                                 </button>
 

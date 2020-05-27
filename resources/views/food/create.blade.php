@@ -61,7 +61,11 @@
                                 <select class=" form-control border" name="menuname">
                                 <option value="">Choose Menu</option>
                                     @foreach ($data as $menu)
+                                    @if(Request::old('menuname') == $menu->id)
+                                    <option value="{{$menu->id}}" selected>{{$menu->menu_name}}</option>
+                                    @else
                                     <option value="{{$menu->id}}">{{$menu->menu_name}}</option>
+                                    @endif
                                     @endforeach
                                 </select>
                                 @if ($errors->has('menuname'))

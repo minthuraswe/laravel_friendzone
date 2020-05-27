@@ -17,7 +17,7 @@ class FoodController extends Controller
      */
     public function index()
     {
-        $food = Food::paginate(8);
+        $food = Food::paginate(5);
         return view('food.index',compact('food')); 
     }
 
@@ -61,15 +61,16 @@ class FoodController extends Controller
             'menu_id' => request('menuname'),
         ]);
 
-        return redirect('/food')->with('message','Successfully Uploaded!!');
+        return redirect('food')->with('message','Successfully Uploaded!!');
     }
 
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $food = Food::where('foodname', 'like', '%'.$search.'%')->paginate(8);
+        $food = Food::where('foodname', 'like', '%'.$search.'%')->paginate(5);
+        $search_count = count($food);
       
-        return view('food.search',compact('food'));
+        return view('food.search',compact('food','search','search_count'));
     }
 
     /**
@@ -126,7 +127,7 @@ class FoodController extends Controller
         $food->foodprice = $request->foodprice;
         $food->menu_id = $request->menuname;
         $food->save();
-        return redirect('/food')->with('message', 'Successfully Updated!!');
+        return redirect('food')->with('message', 'Successfully Updated!!');
     }
 
     /**
@@ -139,6 +140,6 @@ class FoodController extends Controller
     {
         $food = Food::find($id);
         $food->delete();
-        return redirect('/food')->with('message', 'Successfully Deleted!!');
+        return redirect('food')->with('message', 'Successfully Deleted!!');
     }
 }

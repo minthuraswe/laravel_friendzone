@@ -57,7 +57,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4">
-                        <a href="{{url('/feedbackus')}}">
+                        <a href="{{url('/feedback')}}">
                         <div class="card mt-0">
                             <div class="stat-widget-two">
                                 <div class="stat-content">

@@ -11,16 +11,14 @@ use App\Model\UserMessage;
 class MenuController extends Controller
 {
     public function index(){
-        $food = Food::all();
+        $food = Food::latest('updated_at')->paginate(16);
         $data = Menu::all();
+        
         return view('frontend.menu',compact('food','data'));
     }
 
     public function find($id){
-        $food = Menu::find($id)
-                    ->foods()
-                    ->latest()
-                    ->get();
+        $food = Menu::find($id)->foods()->paginate(16);
         $data = Menu::all();
         
         return view('frontend.menu',compact('food','data'));

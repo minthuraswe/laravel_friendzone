@@ -1,14 +1,15 @@
-@extends('frontend.master')
+@extends('frontend.layouts.master')
 <?php $current_page = "contactus"; ?>
-@include('frontend.header')
 @section('title', 'FriendZone | Contact')
+
 @section('content')
-{{-- @include('frontend.secheader_contactus') --}}
+@include('frontend.header')
+
     <section style="background-color:#131313;">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 p-0 contact-border">
-                    <form action="{{url('/feedbackus')}}" method="post" class="p-5" style="margin-block-end:0" accept-charset="UTF-8">
+                    <form action="{{url('/feedback')}}" method="post" class="p-5" style="margin-block-end:0" accept-charset="UTF-8">
                         @csrf
                            
                             <div class="form-group mb-4 text-center">
@@ -20,7 +21,7 @@
                             </p>
                              @endif
                             <div class="form-group">
-                               <input type="text" class="form-control"  name="name" placeholder="Your Name" >
+                               <input type="text" class="form-control"  name="name" placeholder="Your Name" value="{{old('name')}}">
                                @if ($errors->has('name'))
                                 <span class="text-danger">
                                    <sm>{{ $errors->first('name') }}</sm>
@@ -28,7 +29,7 @@
                                 @endif
                             </div>  
                             <div class="form-group ">
-                                <input type="email" class="form-control" name="email" placeholder="Your Email">
+                                <input type="email" class="form-control" name="email" placeholder="Your Email" value="{{old('email')}}">
                                 @if ($errors->has('email'))
                                 <span class="text-danger">
                                    <sm>{{ $errors->first('email') }}</sm>
@@ -36,7 +37,7 @@
                                  @endif
                             </div>
                             <div class="form-group ">
-                                <textarea class="form-control" name="message" id="message" rows="7" placeholder="Your Message"></textarea>
+                                <textarea class="form-control" name="message" id="message" rows="7" placeholder="Your Message">{{old('message')}}</textarea>
                                 @if ($errors->has('message'))
                                 <span class="text-danger">
                                    <sm>{{ $errors->first('message') }}</sm>
