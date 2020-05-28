@@ -4,7 +4,13 @@
 <section id="main-content">
         <div class="row">
             <div class="col-md-12">
-                <a href="{{url('/dashboard')}}" class="btn btn-primary mb-3 p-2">Click Here To Go Back</a>
+                <div class="d-flex">
+                    <h2>Feedback</h2>
+                    <div class="ml-auto">
+                        <a href="{{url('/admin')}}" class="btn btn-primary mb-3 p-2"> Back</a>
+                    </div>
+                </div>
+             
                 @if(session('status'))
                 <p class="alert alert-success">
                     {{session('status')}}</p>

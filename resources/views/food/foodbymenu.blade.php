@@ -9,7 +9,7 @@
       <div class="d-flex">
        
         <div class="mr-auto">
-          <a href="{{url('/dashboard')}}" class="btn btn-primary mb-3  p-2">Click Here To Go Back</a>
+          <a href="{{url('/admin')}}" class="btn btn-primary mb-3  p-2">Back</a>
         </div>
       </div>
 

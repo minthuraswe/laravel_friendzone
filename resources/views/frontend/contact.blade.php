@@ -13,7 +13,7 @@
                         @csrf
                            
                             <div class="form-group mb-4 text-center">
-                                <h2 class="text-light">Send Us Message</h2>
+                                <h2 class="text-light fz welcome-fz">Send Us Message</h2>
                             </div>
                             @if(session('status'))
                             <p class="alert alert-success animated fadeIn border border-success text-success">

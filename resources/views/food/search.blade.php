@@ -4,13 +4,13 @@
     <div class="row">
         <div class="col-md-12">
             <div class="d-flex">
-                <h2>Foods</h2>
+                <h2>Food</h2>
                 <form action="{{url('/searchfood')}}" method="get" class="form-inline my-2 my-lg-0">
                     <input class="mr-sm-2 ml-sm-2 mb-3" type="search" placeholder="Search" name="search">
                     <button class=" mb-3" type="submit">Search</button>
                 </form>
                 <div class="ml-auto">
-                    <a href="{{url('/food')}}" class="btn btn-primary mb-3 p-2">Click Here To Go Back</a>
+                    <a href="{{url('/food')}}" class="btn btn-primary mb-3 p-2"> Back</a>
                 </div>
             </div>
 

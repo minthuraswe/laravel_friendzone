@@ -4,14 +4,15 @@
     <div class="row">
         <div class="col-md-12">
           <div class="d-flex">
-            <h2>Menus</h2>
+            <h2>Menu</h2>
             <form action="{{url('/searchmenu')}}" method="get" class="form-inline my-2 my-lg-0">
               <input class="mr-sm-2 ml-sm-2 mb-3" type="search" placeholder="Search" name="search">
               <button class=" mb-3" type="submit">Search</button>
             </form>
             <div class="ml-auto">
-              <a href="{{url('/menu/create')}}" class="btn btn-primary mb-3  p-2" >Create New One Here</a>
-              <a href="{{url('/dashboard')}}" class="btn btn-outline-primary mb-3 p-2">Click Here To Go Back</a>
+              <a href="{{url('/menu/create')}}" class="btn btn-primary mb-3  p-2" >
+                <img src="{{asset('user/images/plus.png')}}" class="mb-1"> Add New One</a>
+                <a href="{{url('/admin')}}" class="btn btn-outline-primary mb-3 p-2">Back</a>
             </div>
           </div>
           

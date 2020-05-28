@@ -5,7 +5,7 @@
     <div class="row">
 
         <div class="col-md-4">
-            <a href="{{url('/food')}}" class="btn btn-primary mb-3 p-2">Click Here To Go Back</a>
+            <a href="{{url('/food')}}" class="btn btn-primary mb-3 p-2">Back</a>
             <div class="card mt-0">
                 <div class="card-header">
                     {{$food->foodname}}

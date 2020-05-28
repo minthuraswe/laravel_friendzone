@@ -16,7 +16,7 @@ class ContactusController extends Controller
      */
     public function index()
     {
-        $usermessage = UserMessage::paginate(6);
+        $usermessage = UserMessage::paginate(5);
         return view('userfeedback.show', compact('usermessage'));
     }
     public function home()

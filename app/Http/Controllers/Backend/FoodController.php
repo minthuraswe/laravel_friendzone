@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Backend;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Food;
 use App\Model\Menu;
+use Illuminate\Http\Request;
 use Validator;
 
 class FoodController extends Controller
@@ -18,7 +18,7 @@ class FoodController extends Controller
     public function index()
     {
         $food = Food::paginate(5);
-        return view('food.index',compact('food')); 
+        return view('food.index', compact('food'));
     }
 
     /**
@@ -29,7 +29,7 @@ class FoodController extends Controller
     public function create()
     {
         $data = Menu::all();
-        return view('food.create',compact('data'));
+        return view('food.create', compact('data'));
     }
 
     /**
@@ -40,17 +40,17 @@ class FoodController extends Controller
      */
     public function store(Request $request)
     {
-       $validatedData = Validator::make($request->all(),[
-           'foodname' => 'required',
-           'foodimage' => 'required',
-           'foodingredient' => 'required',
-           'foodprice' => 'required',
-           'menuname' => 'required',
-       ])->validate();
+        $validatedData = Validator::make($request->all(), [
+            'foodname' => 'required',
+            'foodimage' => 'required',
+            'foodingredient' => 'required',
+            'foodprice' => 'required',
+            'menuname' => 'required',
+        ])->validate();
 
         $file = $request->file('foodimage');
-        $filename = uniqid().'.'.$file->getClientOriginalExtension();
-        $file->move(public_path(). '/uploads/', $filename);
+        $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path() . '/uploads/', $filename);
 
         Food::create([
             'user_id' => auth()->id(),
@@ -61,16 +61,17 @@ class FoodController extends Controller
             'menu_id' => request('menuname'),
         ]);
 
-        return redirect('food')->with('message','Successfully Uploaded!!');
+        return redirect('food')->with('message', 'Successfully Uploaded!!');
     }
 
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $food = Food::where('foodname', 'like', '%'.$search.'%')->paginate(5);
+        $food = Food::where('foodprice', 'like', '%' . $search . '%')
+            ->orwhere('foodname', 'like', '%' . $search . '%')->paginate();
         $search_count = count($food);
-      
-        return view('food.search',compact('food','search','search_count'));
+
+        return view('food.search', compact('food', 'search', 'search_count'));
     }
 
     /**
@@ -81,8 +82,8 @@ class FoodController extends Controller
      */
     public function show($id)
     {
-       $food = Food::find($id);
-       return view('food.show', compact('food'));
+        $food = Food::find($id);
+        return view('food.show', compact('food'));
     }
 
     /**
@@ -95,8 +96,8 @@ class FoodController extends Controller
     {
         $food = Food::find($id);
         $data = Menu::all();
-        return view('food.edit',compact('food','data'));
-        
+        return view('food.edit', compact('food', 'data'));
+
     }
 
     /**
@@ -108,7 +109,7 @@ class FoodController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = Validator::make($request->all(),[
+        $validatedData = Validator::make($request->all(), [
             'foodname' => 'required',
             'foodimage' => 'required',
             'foodingredient' => 'required',
@@ -117,8 +118,8 @@ class FoodController extends Controller
         ])->validate();
 
         $file = $request->file('foodimage');
-        $filename = uniqid().'.'.$file->getClientOriginalExtension();
-        $file->move(public_path(). '/uploads/', $filename);
+        $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path() . '/uploads/', $filename);
 
         $food = Food::find($id);
         $food->foodname = $request->foodname;
