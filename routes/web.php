@@ -22,19 +22,15 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::resource('/users', 'UserController');
 Route::get('/edit', '\App\Http\Controllers\Auth\RegisterController@edit');
-// Route::get('/change_user_pass','\App\Http\Controllers\Auth\RegisterController@page' );
-// Route::resource('/changepassword', 'ChangePassController');
 
 
-Route::group(['namespace' => 'Backend'], function(){
+Route::group(['namespace' => 'Backend', 'middleware' => 'auth'], function(){
     Route::resource('/food', 'FoodController');
     Route::resource('/menu', 'MenuController');
     Route::get('/food-by-menu/{id}', 'FoodByMenuController@index');
     Route::get('/searchmenu', 'MenuController@search');
     Route::get('/searchfood', 'FoodController@search');
-    // Route::get('/searchfoodbymenu', 'FoodByMenuController@search');
-    // Route::resource('/contact', 'ContactusController');
-
+    Route::resource('/image', 'ImageController');
 });
 
 Route::group(['namespace' => 'Frontend'], function(){

@@ -45,7 +45,7 @@
                                 <h5 class="card-title fz">{{$item->foodname}}
                                   <span class="text-warning float-right">{{$item->foodprice}} KS</span>
                                  </h5>
-                                <p class="card-text sec-header text-truncate" style="font-size:1.1rem;">{{$item->foodingredient}}</p>
+                                <p class="card-text sec-header" style="font-size:1.1rem;">{{$item->foodingredient}}</p>
                               </div>
                             </div>
                           </div>

@@ -22,7 +22,12 @@
 
 
       @if (session('message'))
-      <p class="alert alert-success">{{session('message')}}</p>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{session('message')}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
       @endif
       <table class="table table-striped">
         <thead>
@@ -44,9 +49,10 @@
             <th scope="row">{{$foods->id}}</th>
             <td>{{$foods->foodname}}</td>
             <td>
-              <img src="{{asset('/uploads/'. $foods->foodimage)}}" width="40px" height="40px" class="rounded">
-              {{-- {{$foods->foodimage}} --}}
-            </td>
+              <a href="{{ URL::to('image/' . $foods->id . '/edit' ) }}">
+                <img src="{{asset('/uploads/'. $foods->foodimage)}}" width="40px" height="40px" class="rounded" title="{{$foods->foodimage}}" >
+              </a>
+              </td>
             <td width="40%">{{$foods->foodingredient}}</td>
             <td class="text-danger">{{$foods->foodprice}} KS</td>
             <td>

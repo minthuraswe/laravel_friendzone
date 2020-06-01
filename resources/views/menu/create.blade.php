@@ -13,10 +13,10 @@
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label mt-2 text-md-right">Enter Menu Name</label>
                                 <div class="col-md-6">
-                                    <input  class="form-control border" type="text" name="menu_name">
-                                    @if ($errors->has('menu_name'))
+                                    <input  class="form-control border" type="text" name="name">
+                                    @if ($errors->has('name'))
                                     <span class="text-danger">
-                                       <sm>{{ $errors->first('menu_name') }}</sm>
+                                       <sm>{{ $errors->first('name') }}</sm>
                                     </span>
                                     @endif
                                 </div>

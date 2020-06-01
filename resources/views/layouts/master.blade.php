@@ -18,7 +18,7 @@
     <link href="{{asset('assets/css/lib/themify-icons.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/lib/menubar/sidebar.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/lib/bootstrap.min.css')}}" rel="stylesheet">
-
+    
     <link href="{{asset('assets/css/lib/helper.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}

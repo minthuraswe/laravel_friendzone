@@ -41,10 +41,10 @@ class FoodController extends Controller
     public function store(Request $request)
     {
         $validatedData = Validator::make($request->all(), [
-            'foodname' => 'required',
-            'foodimage' => 'required',
-            'foodingredient' => 'required',
-            'foodprice' => 'required',
+            'name' => 'required',
+            'image' => 'required',
+            'ingredient' => 'required',
+            'price' => 'required',
             'menuname' => 'required',
         ])->validate();
 
@@ -54,10 +54,10 @@ class FoodController extends Controller
 
         Food::create([
             'user_id' => auth()->id(),
-            'foodname' => request('foodname'),
+            'foodname' => request('name'),
             'foodimage' => $filename,
-            'foodingredient' => request('foodingredient'),
-            'foodprice' => request('foodprice'),
+            'foodingredient' => request('ingredient'),
+            'foodprice' => request('price'),
             'menu_id' => request('menuname'),
         ]);
 
@@ -97,7 +97,6 @@ class FoodController extends Controller
         $food = Food::find($id);
         $data = Menu::all();
         return view('food.edit', compact('food', 'data'));
-
     }
 
     /**
@@ -108,24 +107,11 @@ class FoodController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        $validatedData = Validator::make($request->all(), [
-            'foodname' => 'required',
-            'foodimage' => 'required',
-            'foodingredient' => 'required',
-            'foodprice' => 'required',
-            'menuname' => 'required',
-        ])->validate();
-
-        $file = $request->file('foodimage');
-        $filename = uniqid() . '.' . $file->getClientOriginalExtension();
-        $file->move(public_path() . '/uploads/', $filename);
-
+    { 
         $food = Food::find($id);
-        $food->foodname = $request->foodname;
-        $food->foodimage = $filename;
-        $food->foodingredient = $request->foodingredient;
-        $food->foodprice = $request->foodprice;
+        $food->foodname = $request->name;
+        $food->foodingredient = $request->ingredient;
+        $food->foodprice = $request->price;
         $food->menu_id = $request->menuname;
         $food->save();
         return redirect('food')->with('message', 'Successfully Updated!!');
@@ -143,4 +129,5 @@ class FoodController extends Controller
         $food->delete();
         return redirect('food')->with('message', 'Successfully Deleted!!');
     }
+
 }

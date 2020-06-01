@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
+use App\Model\Food;
 use App\Model\Menu;
 use Validator;
 
-class MenuController extends Controller
+class ImageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,8 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $data = Menu::paginate(5);
-        return view('menu.index',compact('data'));
+        $food = Food::paginate(5);
+        return view('food.index', compact('food'));
     }
 
     /**
@@ -28,7 +28,7 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('menu.create');
+        //
     }
 
     /**
@@ -39,24 +39,7 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-           
-        $validatedData = Validator::make($request->all(), [
-            'name' => 'required',
-        ])->validate();
-       
-        Menu::create([
-            'menu_name' => request('name'),
-        ]);
-        return redirect('/menu')->with('message','Successfully Created!!');
-    }
-
-    public function search(Request $request)
-    {
-        $search = $request->get('search');
-        $searchmenu = Menu::where('menu_name', 'like', '%'.$search.'%')->paginate();
-        $search_count = count($searchmenu);
-
-        return view('menu.search',compact('searchmenu','search','search_count'));
+        //
     }
 
     /**
@@ -78,8 +61,10 @@ class MenuController extends Controller
      */
     public function edit($id)
     {
-        $data = Menu::find($id);
-        return view('menu.edit',compact('data'));
+        $food = Food::find($id);
+        $data = Menu::all();
+
+        return view('food.editimage', compact('food', 'data'));
     }
 
     /**
@@ -91,11 +76,18 @@ class MenuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Menu::find($id);
-        $data->menu_name = $request->name;
+        $validatedData = Validator::make($request->all(), [
+            'image' => 'required',   
+        ])->validate();
 
-        $data->save();
-        return redirect('/menu')->with('message', 'Successfully Updated!!');
+        $file = $request->file('image');
+        $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path() . '/uploads/', $filename);
+
+        $food = Food::find($id);
+        $food->foodimage = $filename;
+        $food->save();
+        return redirect('food')->with('message', 'Image Successfully Updated!!');
     }
 
     /**
@@ -106,14 +98,6 @@ class MenuController extends Controller
      */
     public function destroy($id)
     {
-        Menu::find($id)->delete();
-        return redirect('/menu')->with('message', 'Successfully Deleted!!');
+        //
     }
-
-    // private function validateRequest()
-    // {
-    //     return  request()->validate([
-    //         'menuname' => 'required',
-    //     ]);
-    // }
 }

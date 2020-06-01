@@ -13,10 +13,10 @@
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right mt-2">Enter Food Name</label>
                                 <div class="col-md-6">
-                                <input id="name" class="form-control border " type="text" name="foodname" value="{{old('foodname')}}">
-                                @if ($errors->has('foodname'))
+                                <input id="name" class="form-control border " type="text" name="name" value="{{old('name')}}">
+                                @if ($errors->has('name'))
                                 <span class="text-danger">
-                                   <sm>{{ $errors->first('foodname') }}</sm>
+                                   <sm>{{ $errors->first('name') }}</sm>
                                 </span>
                                 @endif
                             </div>
@@ -24,10 +24,10 @@
                             <div class="form-group row">
                                 <label for="image" class="col-md-4 col-form-label text-md-right mt-2">Enter Food Image</label>
                                 <div class="col-md-6">
-                                <input id="image" class="form-control border" type="file" name="foodimage" value="{{old('foodimage')}}" >
-                                @if ($errors->has('foodimage'))
+                                <input id="image" class="form-control border" type="file" name="image"  >
+                                @if ($errors->has('image'))
                                 <span class="text-danger">
-                                   <sm>{{ $errors->first('foodimage') }}</sm>
+                                   <sm>{{ $errors->first('image') }}</sm>
                                 </span>
                                 @endif
                              
@@ -36,10 +36,10 @@
                             <div class="form-group row">
                                 <label for="text" class="col-md-4 col-form-label text-md-right mt-4">Enter Food Ingredients</label>
                                 <div class="col-md-6">
-                                    <textarea style="height:80px;" class="form-control border" name="foodingredient" id="text"> {{old('foodingredient')}}</textarea>
-                                    @if ($errors->has('foodingredient'))
+                                    <textarea style="height:80px;" class="form-control border" name="ingredient" id="text"> {{old('ingredient')}}</textarea>
+                                    @if ($errors->has('ingredient'))
                                     <span class="text-danger">
-                                       <sm>{{ $errors->first('foodingredient') }}</sm>
+                                       <sm>{{ $errors->first('ingredient') }}</sm>
                                     </span>
                                     @endif
                                 </div>
@@ -47,10 +47,10 @@
                             <div class="form-group row">
                                 <label for="text" class="col-md-4 col-form-label text-md-right mt-2">Enter Food pirce</label>
                                 <div class="col-md-6">
-                                <input class="form-control border" type="number" name="foodprice" value="{{old('foodprice')}}">
-                                @if ($errors->has('foodprice'))
+                                <input class="form-control border" type="number" name="price" value="{{old('price')}}">
+                                @if ($errors->has('price'))
                                 <span class="text-danger">
-                                   <sm>{{ $errors->first('foodprice') }}</sm>
+                                   <sm>{{ $errors->first('price') }}</sm>
                                 </span>
                                 @endif
                             </div>

@@ -24,7 +24,7 @@
                     {{-- <div class="badge badge-mine text-wrap float-right" style="width: 6rem;">
                       {{$item->menu->menu_name}}
                     </div>--}}
-                  <p class="card-text sec-header text-truncate" style="font-size:1.1rem;">{{$item->foodingredient}}</p>
+                  <p class="card-text sec-header" style="font-size:1.1rem;">{{$item->foodingredient}}</p>
                  
                   {{-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> --}}
                 </div>
