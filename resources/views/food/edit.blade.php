@@ -14,7 +14,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">Enter Food Name</label>
                             <div class="col-md-6">
                                 <input id="email" class="form-control border" type="text" name="foodname"
-                                    value="{{$food->foodname}}">
+                                    value="{{old('foodname', $food->foodname)}}">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -37,15 +37,15 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">Enter Food
                                 Ingredient</label>
                             <div class="col-md-6">
-                                <input id="email" class="form-control border" type="text" name="foodingredient"
-                                    value="{{$food->foodingredient}}">
+                                <textarea id="email" class="form-control border" type="text" style="height:80px;"
+                                name="foodingredient">{{old('foodingredient',$food->foodingredient)}}</textarea>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">Enter Food Pice</label>
                             <div class="col-md-6">
-                                <input id="email" class="form-control border" type="integer" name="foodprice"
-                                    value="{{$food->foodprice}}">
+                                <input id="email" class="form-control border" type="number" name="foodprice"
+                                    value="{{old('foodprice', $food->foodprice)}}">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -54,10 +54,10 @@
                                 <select class=" form-control border" name="menuname">
                                     @foreach ($data as $item)
                                     @if($item->id == $food->menu_id)
-                                    <option value="{{$item->id}}" selected="selected">{{$food->menu->menu_name}}
+                                    <option value="{{$item->id}}" selected>{{$food->menu->menu_name}}
                                     </option>
                                     @else
-                                    <option value="{{$item->id}}">{{$item->menu_name}}</option>
+                                    <option value="{{$item->id}}" {{old('menuname') == $item->id ? 'selected' : ''}}>{{$item->menu_name}}</option>
                                     @endif
                                     @endforeach
                                 </select>

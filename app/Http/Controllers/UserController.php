@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 use App\User;
 use App\Model\Food;
 use App\Model\Menu;
@@ -83,14 +84,9 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->name = $request->name;
         $user->email = $request->email;
-       
+
         $user->save();
         return redirect('/users')->with('success','Profile Updated Successfully');
-        
-        
-
-     
-        
     }
 
     /**

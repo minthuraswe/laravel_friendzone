@@ -47,7 +47,7 @@
               <img src="{{asset('/uploads/'. $foods->foodimage)}}" width="40px" height="40px" class="rounded">
               {{-- {{$foods->foodimage}} --}}
             </td>
-            <td>{{$foods->foodingredient}}</td>
+            <td width="40%">{{$foods->foodingredient}}</td>
             <td class="text-danger">{{$foods->foodprice}} KS</td>
             <td>
               <div class="badge badge-primary text-wrap" style="width: 6rem;">

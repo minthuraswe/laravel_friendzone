@@ -2,13 +2,13 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-            <img class="img-fluid d-block w-100"  alt="Responsive-image" src="{{asset('user/images/2.jpg')}}">
+            <img class="img-fluid d-block w-100"  alt="Responsive-image" src="{{asset('user/images/slider1.jpeg')}}">
             </div>
             <div class="carousel-item">
-                <img class="img-fluid d-block w-100"  alt="Responsive-image" src="{{asset('user/images/2.jpg')}}">
+                <img class="img-fluid d-block w-100"  alt="Responsive-image" src="{{asset('user/images/slider2.jpeg')}}">
             </div>
             <div class="carousel-item">
-                <img class="img-fluid d-block w-100"  alt="Responsive-image" src="{{asset('user/images/2.jpg')}}">
+                <img class="img-fluid d-block w-100"  alt="Responsive-image" src="{{asset('user/images/slider3.gif')}}">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" title="Previous">

@@ -16,11 +16,11 @@
                                 {{ session('error') }}
                             </div>
                         @endif
-                            @if (session('success'))
-                                <div class="alert alert-success">
-                                    {{ session('success') }}
-                                </div>
-                            @endif
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
                     </div>
                   
                     <form method="POST" action="{{ route('users.update', Auth::user()->id) }}">
@@ -54,6 +54,21 @@
                                 @enderror
                             </div>
                         </div>
+
+                        {{-- <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Old Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input data-toggle="password" id="password" type="password" class="form-control border" name="old_pass" required autocomplete="old-password">
+                                
+                                @error('old password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div> --}}
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-success border">
