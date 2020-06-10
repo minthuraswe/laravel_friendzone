@@ -5,8 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-4" >
             {{-- <a href="/register">Register</a> --}}
-           <h2 class="text-center" style="color: #e6e3e3;">Friend Zone</h2>
-            <div class="card text-light" style="background-color: #191919;">
+           <h2 class="text-center">Friend Zone</h2>
+            <div class="card text-dark">
                 {{-- <div class="card-header text-center" style="font-size:20px;">{{ __('Friend Zone') }}
                 <span class="d-flex justify-content-center" style="font-size:11px;">Cafe & Restaurant</span>
                 </div> --}}
@@ -72,7 +72,7 @@
                 </div>
             </div>
             <p class="pt-2 mb-0"><i class="fa fa-copyright" aria-hidden="true"></i> 2020 Friend Zone. All Rights Reserved.</p>
-            <a href="/index" class="text-monospace"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to Home</a>
+            <a href="/index" class="text-monospace"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to Friend Zone</a>
         </div>
     </div>
 </div>

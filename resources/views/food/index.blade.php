@@ -50,7 +50,7 @@
             <td>{{$foods->foodname}}</td>
             <td>
               <a href="{{ URL::to('image/' . $foods->id . '/edit' ) }}">
-                <img src="{{asset('/uploads/'. $foods->foodimage)}}" width="40px" height="40px" class="rounded" title="{{$foods->foodimage}}" >
+                <img src="{{asset('/uploads/'. $foods->foodimage)}}" width="30px" height="30px" class="rounded" title="{{$foods->foodimage}}" >
               </a>
               </td>
             <td width="40%">{{$foods->foodingredient}}</td>

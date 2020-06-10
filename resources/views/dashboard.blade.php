@@ -6,11 +6,20 @@
                    
                
                 <div class="row">
+                    {{-- @if (session('success'))
+                    <div class="" >
+                      {{session('success')}}
+                     
+                    </div>
+                    @endif --}}
                     @if (session('success'))
-                    <div class="col-lg-12 title-margin-right  ">
-                        <ol class="breadcrumb mb-0 alert alert-success">
-                            <span>{{session('success')}}</span>
-                        </ol>
+                    <div class="col-lg-12 " >
+                        <div class="breadcrumb mb-0 alert alert-success alert-dismissible fade show" role="alert">
+                           {{session('success')}}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                     </div>
                     @endif
                     {{-- @if (session('message'))

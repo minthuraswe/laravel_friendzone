@@ -48,7 +48,7 @@ class FoodController extends Controller
             'menuname' => 'required',
         ])->validate();
 
-        $file = $request->file('foodimage');
+        $file = $request->file('image');
         $filename = uniqid() . '.' . $file->getClientOriginalExtension();
         $file->move(public_path() . '/uploads/', $filename);
 

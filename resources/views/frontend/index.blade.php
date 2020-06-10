@@ -27,6 +27,7 @@
 
 @include('frontend.media')
 @include('frontend.menulist')
+@include('frontend.testimonial')
 @include('frontend.footer')
 @endsection
 

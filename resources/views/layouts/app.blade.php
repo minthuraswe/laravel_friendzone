@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
-<body style="padding-top:70px;padding-bottom:70px;background-color: #000000;">
+<body style="padding-top:70px;padding-bottom:70px;background-color:#f1f1f1;">
     <div id="app">
         {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">

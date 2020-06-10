@@ -9,7 +9,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 p-0 contact-border">
-                    <form action="{{url('/feedback')}}" method="post" class="p-5" style="margin-block-end:0" accept-charset="UTF-8">
+                    <form action="{{url('/feedback')}}" method="post" class="contact-padding"  style="margin-block-end:0" accept-charset="UTF-8">
                         @csrf
                            
                             <div class="form-group mb-4 text-center">

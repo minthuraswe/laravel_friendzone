@@ -39,7 +39,7 @@
                         <th scope="row">{{$foods->id}}</th>
                         <td>{{$foods->foodname}}</td>
                         <td>
-                            <img src="{{asset('/uploads/'. $foods->foodimage)}}" width="40px" height="40px" class="rounded">
+                            <img src="{{asset('/uploads/'. $foods->foodimage)}}" width="40px" height="40px" class="rounded" title="{{$foods->foodimage}}">
                             {{-- {{$foods->foodimage}} --}}
                         </td>
                         <td>{{$foods->foodingredient}}</td>
@@ -54,7 +54,7 @@
                             <a href="{{ URL::to('food/' . $foods->id . '/edit') }}" class="btn btn-primary p-2"
                                 title="edit"><img src="{{asset('images/edit.png')}}"></a>
                             <a href="{{ URL::to('food/' . $foods->id) }}" class="btn btn-warning p-2" title="View"><img
-                                    src="{{asset('images/view.png')}}"></a>
+                                    src="{{asset('images/view.png')}}"></a> 
                             <form action="{{ URL::to('food/' . $foods->id ) }}" method="post" style="display: inline;">
                                 @method('DELETE')
                                 @csrf

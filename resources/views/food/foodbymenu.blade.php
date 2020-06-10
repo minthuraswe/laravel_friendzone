@@ -31,7 +31,8 @@
             <th scope="row">{{$foods->id}}</th>
             <td>{{$foods->foodname}}</td>
             <td>
-              <img src="{{asset('/uploads/'. $foods->foodimage)}}" width="40px" height="40px" class="rounded">
+              <img src="{{asset('/uploads/'. $foods->foodimage)}}" width="40px" height="40px" class="rounded"
+              title="{{$foods->foodimage}}">
               {{-- {{$foods->foodimage}} --}}
             </td>
             <td>{{$foods->foodingredient}}</td>

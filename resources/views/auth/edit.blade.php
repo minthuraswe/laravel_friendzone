@@ -6,8 +6,8 @@
     <div class="row justify-content-center">
         <div class="col-md-6"> 
           
-            <div class="card text-light" style="background-color: #191919;">
-                <div class="card-header text-center" style="font-size:20px;color: #e6e3e3;">{{ __('Profile Information') }}</div>
+            <div class="card text-dark">
+                <div class="card-header text-center" style="font-size:20px;color: #000;">{{ __('Profile Information') }}</div>
                
                 <div class="card-body">
                     <div class="panel-body">

@@ -20,6 +20,7 @@
                   <li class="list-inline-item   footer-link">
                     <a href="{{url('/contact')}}"> Contact</a></li>
                  </ul>
+               
               </div>
            
         </div>

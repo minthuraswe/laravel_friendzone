@@ -2,18 +2,28 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-h5 {
-    font-size: 1.18rem!important;
-}
+
+/* border */
 
 .border-mine {
     border-bottom: 1px solid #eeeeee;
+}
+
+.border-bottom {
+    border-bottom: none!important;
+}
+
+.contact-border {
+    border-right: 1px solid #191919;
 }
 
 .menu-border {
     border-radius: 0;
     border: none;
 }
+
+
+/* my css */
 
 .header-bg {
     background-color: #000000;
@@ -31,11 +41,6 @@ h5 {
     font-size: 1.1rem;
 }
 
-.sec-header-padding {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
 .cf-rs {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #a47c48;
@@ -46,91 +51,18 @@ h5 {
     font-size: 1.1rem;
 }
 
-.p-5 {
-    padding: 9rem!important;
-}
-
-.pt-5,
-.pb-5 {
-    padding-top: 8rem!important;
-    padding-bottom: 8rem!important;
-}
-
-small {
-    font-size: 90%!important;
-    font-weight: 500!important;
-}
-
-ul>div>li>a:hover {
-    background-color: #191919;
-    transition: all 0.3s ease-in-out;
-}
-
-.active,
-.location-bg {
-    background-color: #191919;
+.unicode {
+    font-family: Myanmar3, Yunghkio, 'Times New Roman';
+    font-size: 16px;
 }
 
 .mine {
     background-color: #000;
 }
 
-.active>a {
-    color: #ffffff!important;
-}
-
 a {
     text-decoration: none!important;
     color: #e6e3e3!important;
-}
-
-a:hover {
-    color: #ffffff!important;
-}
-
-.pl-5,
-.px-5 {
-    padding-left: 2.2rem!important;
-}
-
-.menu-margin-top {
-    margin-top: 0;
-}
-
-.li-margin-right {
-    margin-right: 1rem;
-}
-
-.border-bottom {
-    border-bottom: none!important;
-}
-
-.navbar-toggler {
-    padding: .25rem .75rem;
-    font-size: 1.15rem;
-    line-height: 1;
-    background-color: transparent;
-    border-radius: 0;
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(164,124,72)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E")!important;
-}
-
-button:focus {
-    outline: none;
-}
-
-.unicode {
-    font-family: Myanmar3, Yunghkio, 'Times New Roman';
-    font-size: 16px;
-}
-
-.carousel-control-next-icon,
-.carousel-control-prev-icon {
-    display: inline-block;
-    width: 50px!important;
-    height: 30px!important;
 }
 
 .btn {
@@ -163,15 +95,6 @@ button:focus {
     font-size: 1.15rem!important;
 }
 
-.btn-warning:focus {
-    box-shadow: 0 0 0 0.2rem rgba(164, 124, 72, 0.5)!important;
-}
-
-.form-control:focus {
-    box-shadow: none!important;
-    border-color: gray!important;
-}
-
 .mycol-12 {
     position: relative;
     width: 100%;
@@ -179,11 +102,6 @@ button:focus {
     padding-left: 15px;
     flex: 0 0 66.666667%;
     max-width: 66.666667%;
-}
-
-.margin-left-right {
-    margin-left: 0;
-    margin-right: 0;
 }
 
 .card-img {
@@ -214,10 +132,6 @@ p {
 
 .form-name {
     font-size: 1.1rem;
-}
-
-.contact-border {
-    border-right: 1px solid #191919;
 }
 
 .btn:disabled {
@@ -272,6 +186,119 @@ p {
     padding: 0.6rem 0.99rem!important;
 }
 
+.bg-img {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.bg-fixed {
+    background-attachment: fixed !important;
+}
+
+
+/* padding */
+
+.p-5 {
+    padding: 9rem!important;
+}
+
+.contact-padding {
+    padding: 8rem;
+}
+
+.pt-5,
+.pb-5 {
+    padding-top: 8rem!important;
+    padding-bottom: 8rem!important;
+}
+
+.pl-5,
+.px-5 {
+    padding-left: 2.2rem!important;
+}
+
+.testimonial-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.sec-header-padding {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+small {
+    font-size: 90%!important;
+    font-weight: 500!important;
+}
+
+
+/* hover */
+
+ul>div>li>a:hover {
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    color: #a47c48!important;
+}
+
+ul>li>a:hover {
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    color: #a47c48!important;
+}
+
+a:hover {
+    color: #ffffff!important;
+}
+
+.img-hover-zoom {
+    overflow: hidden;
+}
+
+.img-hover-zoom img {
+    transition: transform 1.5s, filter 1.5s ease-in-out;
+}
+
+.img-hover-zoom:hover img {
+    transform: scale(1.5);
+    transition-duration: 1.3s;
+}
+
+
+/* active */
+
+.location-bg {
+    background-color: #191919;
+}
+
+.active>a {
+    color: #a47c48!important;
+}
+
+
+/* foucs */
+
+button:focus {
+    outline: none;
+}
+
+.btn-warning:focus {
+    box-shadow: 0 0 0 0.2rem rgba(164, 124, 72, 0.5)!important;
+}
+
+.form-control:focus {
+    box-shadow: none!important;
+    border-color: gray!important;
+}
+
 .page-link:focus {
     z-index: 2;
     outline: 0;
@@ -279,34 +306,52 @@ p {
 }
 
 
-/*****************************************************/
+/* margin */
 
-
-/* [1] The container */
-
-.img-hover-zoom {
-    /* [1.1] Set it as per your need */
-    overflow: hidden;
-    /* [1.2] Hide the overflowing of child elements */
+.menu-margin-top {
+    margin-top: 0;
 }
 
-
-/* [2] Transition property for smooth transformation of images */
-
-.img-hover-zoom img {
-    transition: transform 1.5s, filter 1.5s ease-in-out;
+.li-margin-right {
+    margin-right: 1rem;
 }
 
-
-/* [3] Finally, transforming the image when container gets hovered */
-
-.img-hover-zoom:hover img {
-    transform: scale(1.5);
-    transition-duration: 1.3s;
+.margin-left-right {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .margin-bottom {
     margin-bottom: 0;
+}
+
+
+/* navbar */
+
+.navbar-toggler {
+    padding: .25rem .75rem;
+    font-size: 1.15rem;
+    line-height: 1;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(164,124,72)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E")!important;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    display: inline-block;
+    width: 50px!important;
+    height: 30px!important;
+}
+
+.carousel-indicators li {
+    border-radius: 12px;
+    width: 12px;
+    height: 12px;
+    background-color: #404040;
 }
 
 
@@ -400,6 +445,26 @@ p {
         text-align: right;
         padding-right: .5rem!important;
     }
+    .facebook {
+        padding: .5rem 1rem;
+        text-align: right;
+        padding-right: .5rem;
+    }
+    .bg-img {
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+    }
+    .bg-fixed {
+        background-attachment: fixed !important;
+    }
+    .padding-review-mobile {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -457,8 +522,8 @@ p {
     }
     .pt-5,
     .pb-5 {
-        padding-top: 2rem!important;
-        padding-bottom: 2rem!important;
+        padding-top: 4rem!important;
+        padding-bottom: 4rem!important;
     }
     .form-name {
         font-size: 1rem;
@@ -470,6 +535,17 @@ p {
     .my-text {
         text-align: right;
         padding-right: .5rem!important;
+    }
+    .bg-img {
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+    }
+    .bg-fixed {
+        background-attachment: fixed !important;
     }
 }
 
@@ -502,5 +578,16 @@ p {
     }
     .p-5 {
         padding: 6rem!important;
+    }
+    .bg-img {
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+    }
+    .bg-fixed {
+        background-attachment: fixed !important;
     }
 }
