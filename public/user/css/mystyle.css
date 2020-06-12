@@ -114,10 +114,6 @@ p {
     font-size: 1.1rem;
 }
 
-.my-height {
-    height: 100%;
-}
-
 .my-height-food {
     height: auto;
 }
@@ -418,9 +414,6 @@ button:focus {
     .pb-5 {
         padding-top: 4rem!important;
         padding-bottom: 4rem!important;
-    }
-    .my-height {
-        height: 435px;
     }
     .my-height-food {
         height: 225px;

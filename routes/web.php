@@ -11,18 +11,16 @@
 |
 */
 
-
-// Route::get('/', function () {
-//     return view('dashboard');
-// });
+/* Route->Controller by auth */
 
 Auth::routes();
 Route::get('/admin', 'HomeController@index');
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
 Route::resource('/users', 'UserController');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/edit', '\App\Http\Controllers\Auth\RegisterController@edit');
 
+
+/* Route->Controller by Admin panel */
 
 Route::group(['namespace' => 'Backend', 'middleware' => 'auth'], function(){
     Route::resource('/food', 'FoodController');
@@ -32,6 +30,9 @@ Route::group(['namespace' => 'Backend', 'middleware' => 'auth'], function(){
     Route::get('/searchfood', 'FoodController@search');
     Route::resource('/image', 'ImageController');
 });
+
+
+/* Route->Controller by User Interface */
 
 Route::group(['namespace' => 'Frontend'], function(){
     Route::get('/index','HomeController@index');

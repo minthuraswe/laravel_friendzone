@@ -9,10 +9,9 @@
               </li>
               <li class="">
                 <h2 class="fz welcome-fz">Location</h2>
-<pre class="cf-rs pb-3" style="font-size:1.1rem;">
-အမှတ်(၆) ရပ်ကွက်၊ မြိုင်လမ်း
-အရှေ့ဖက်(၈)လမ်းထောင့်၊ ဇဋိလလမ်း၊ 
-ပခုက္ကူမြို့ </pre>
+                  <p class="cf-rs pb-3" style="font-size:1.1rem;">
+                    Ward No. 6, Zatila Street, Myaing Road(East Side), Pakokku City.
+                  </p>
               </li>
               <li >
                 <h2 class="fz welcome-fz">Contact Number</h2>
@@ -21,7 +20,7 @@
             </ul>
           </div>
             <div class="col-md-6 p-0">
-              <img src="{{asset('user/images/media.jpg')}}" class="img-fluid my-height w-100">
+              <img src="{{asset('user/images/media.jpg')}}" class="img-fluid h-100 w-100">
             </div>
         </div>
     </div>
