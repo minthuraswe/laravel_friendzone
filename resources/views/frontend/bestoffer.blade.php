@@ -10,7 +10,7 @@
                     <h2 class="fz welcome-fz">Our Service</h2>
                     <p class="cf-rs pt-4">We make with love and serve with love.<br>
                         We provide great food at a reasonable price and great quality and service.<br><br>
-                        Please feel free to contact us at 09 773 423246 or mail – salaivanliancung@gmail.com
+                        Please feel free to contact us at <br>09 773 423246, <br> mail – friendzonepku@gmail.com
                     </p>
                 </div>
             </div>

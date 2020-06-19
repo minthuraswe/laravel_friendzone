@@ -67,11 +67,15 @@ class FoodController extends Controller
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $food = Food::where('foodprice', 'like', '%' . $search . '%')
-            ->orwhere('foodname', 'like', '%' . $search . '%')->paginate();
-        $search_count = count($food);
-
-        return view('food.search', compact('food', 'search', 'search_count'));
+        if($search != ""){
+            $food = Food::where('foodprice', 'like', '%' . $search . '%')
+                        ->orwhere('foodname', 'like', '%' . $search . '%')->paginate();
+            $search_count = count($food);
+            return view('food.search', compact('food', 'search', 'search_count'));
+        }else{
+            return view('food.search')->with('error', 'The search text was not found. Sorry!!');
+        }
+       
     }
 
     /**

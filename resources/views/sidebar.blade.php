@@ -11,13 +11,19 @@
                 </li>
 
                 <li class="label">Foods</li>
-                <li class="{{(request()->is('food*')) ? 'active' : ''}}"><a href="{{url('/food')}}"><i class="ti-bar-chart-alt"></i>  Food Table</a></li>
-                
-               
+                @if(request()->is('food*') || request()->is('searchfood'))
+                <li class="active"><a href="{{url('/food')}}"><i class="ti-bar-chart-alt"></i>  Food Table</a></li>
+                @else
+                <li><a href="{{url('/food')}}"><i class="ti-bar-chart-alt"></i>  Food Table</a></li>
+                @endif
+
                 <li class="label">Menu</li>
-                <li  class="{{(request()->is('menu*')) ? 'active' : ''}}"><a href="{{url('/menu')}}"><i class="ti-panel"></i> Menu Table </a></li>
-               
-               
+                @if(request()->is('menu*') || request()->is('searchmenu'))
+                <li  class="active"><a href="{{url('/menu')}}"><i class="ti-panel"></i> Menu Table </a></li>
+                @else
+                <li><a href="{{url('/menu')}}"><i class="ti-panel"></i> Menu Table </a></li>
+                @endif
+
                 <li class="label">Form</li>
                 <li  class="{{(request()->is('feedback*')) ? 'active' : ''}}"><a href="{{url('/feedback')}}"><i class="ti-view-list-alt"></i> User Feedback </a></li>
                 
@@ -99,3 +105,4 @@
                 </div>
                 
             </div>
+

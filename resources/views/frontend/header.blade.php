@@ -3,10 +3,11 @@
         <div class="row">
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-lg ">
+                    <a href="/index">
                     <div title="Friendzone Caf&eacute; & Restaurant">
                         <h2 class="fz">Friend Zone</h2>
                         <small class="cf-rs">Caf&eacute; & Restaurant</small>
-                    </div>
+                    </div></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -40,7 +41,7 @@
 
                         </ul>
                         <div class="border-bottom border-dark facebook">
-                            <a href="https://www.facebook.com/friendzonecafeandrestaurantpkk/"><img src="{{asset('user/images/facebook.png')}}" class="mt-1 mb-1"></a>
+                            <a href="https://www.facebook.com/friendzonecafeandrestaurantpkk/" class="my-text"><img src="{{asset('user/images/facebook.png')}}" class="mt-1 mb-1"></a>
                         </div>
                     </div>
                 </nav>

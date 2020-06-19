@@ -6,7 +6,7 @@
                   
                     <h2 class="fz welcome-fz">Welcome to Friend Zone</h2>
                     <p class="cf-rs pt-4">Welcome to Friend Zone Café & Restaurant.<br>
-                        We are located in Pakokku, the largest city <br>in Magway Region, Myanmar.<br><br>Our goal is to offer great food at a reasonable price while maintain great quality and service.
+                        We are located in Pakokku, the largest city in Magway Region, Myanmar.<br><br>Our goal is to offer great food at a reasonable price while maintain great quality and service.
                     </p>
                 
                 </div>

@@ -8,13 +8,12 @@
     <section style="background-color:#131313;">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12 p-0 contact-border">
+                <div class="col-md-12 contact-border ">
                     <form action="{{url('/feedback')}}" method="post" class="contact-padding"  style="margin-block-end:0" accept-charset="UTF-8">
                         @csrf
-                           
-                            <div class="form-group mb-4 text-center">
-                                <h2 class="text-light fz welcome-fz">Send Us Message</h2>
-                            </div>
+                        <div class="form-group mb-4 text-center">
+                            <h2 class="text-light fz welcome-fz">Send Us Message</h2>
+                        </div>
                             @if(session('status'))
                             <p class="alert alert-success animated fadeIn border border-success text-success">
                                {{session('status')}} 

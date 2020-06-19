@@ -14,10 +14,15 @@
                 </div>
             </div>
 
+            @if(isset($search))
             <div>
-
-                <b> {{$search_count}} </b> results for "{{$search}}"
-
+                <b> {{$search_count}} </b> 
+                    @if($search_count < 2)
+                        result
+                    @else
+                        results
+                    @endif
+                    for "{{$search}}"
             </div>
             <table class="table table-striped">
                 <thead>
@@ -66,13 +71,10 @@
                     @endforeach
                 </tbody>
             </table>
-
-            {{-- <div class="mt-4  mr-0 row float-right">
-                {{$food->links()}}
-        </div> --}}
-
-
-    </div>
+            @else
+                <span class="font-weight-bold">{{$error}}</span>
+            @endif
+        </div>
     </div>
 </section><br><br><br>
 @endsection

@@ -195,6 +195,10 @@ p {
     background-attachment: fixed !important;
 }
 
+.copyright {
+    font-size: 1.1rem;
+}
+
 
 /* padding */
 
@@ -350,6 +354,10 @@ button:focus {
     background-color: #404040;
 }
 
+.my-height {
+    height: 469.5;
+}
+
 
 /*****************************************************/
 
@@ -426,7 +434,7 @@ button:focus {
         font-size: 1rem;
     }
     .footer-link {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
     }
     .text-in-btn {
         font-size: 1.1rem;
@@ -457,6 +465,15 @@ button:focus {
     .padding-review-mobile {
         padding-left: 2rem;
         padding-right: 2rem;
+    }
+    .contact-padding {
+        padding: 3rem;
+    }
+    .copyright {
+        font-size: 1rem;
+    }
+    .my-height {
+        height: 493.5px;
     }
 }
 
@@ -529,6 +546,11 @@ button:focus {
         text-align: right;
         padding-right: .5rem!important;
     }
+    .facebook {
+        padding: .5rem 1rem;
+        text-align: right;
+        padding-right: .5rem;
+    }
     .bg-img {
         background-position: center center;
         background-size: cover;
@@ -539,6 +561,15 @@ button:focus {
     }
     .bg-fixed {
         background-attachment: fixed !important;
+    }
+    .contact-padding {
+        padding: 4rem;
+    }
+    .copyright {
+        font-size: 1rem;
+    }
+    .footer-link {
+        font-size: 1.05rem;
     }
 }
 
@@ -582,5 +613,11 @@ button:focus {
     }
     .bg-fixed {
         background-attachment: fixed !important;
+    }
+    .copyright {
+        font-size: 1rem;
+    }
+    .footer-link {
+        font-size: 1.05rem;
     }
 }
